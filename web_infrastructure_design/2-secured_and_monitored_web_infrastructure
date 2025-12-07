@@ -1,0 +1,21 @@
+# Secured & Monitored 3-Server Infrastructure
+
+## Added Components
+1. 3 Firewalls (1 per server)
+2. SSL Certificate (HTTPS for www.foobar.com)
+3. 3 Monitoring Clients (e.g., Sumologic agents)
+
+## Purpose of Additions
+- Firewalls: Block unauthorized access, control traffic
+- HTTPS: Encrypt data, prevent interception, build trust
+- Monitoring: Track performance, detect issues, collect metrics
+
+## Monitoring
+- Tool: Sumologic/Data collector
+- Data collection: Agents send logs/metrics to central service
+- Monitor QPS: Track web server request rate via logs/metrics
+
+## Issues
+1. SSL termination at LB: Decrypted traffic between LB and servers is vulnerable
+2. Single MySQL write server: Write SPOF, no failover for writes
+3. Same components on all servers: Resource contention, no specialization
