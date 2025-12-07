@@ -1,0 +1,28 @@
+# 3-Server Web Infrastructure
+
+## Components
+1. Load Balancer: HAProxy
+2. 2 Web Servers:
+   - Nginx web server
+   - Application server
+   - Application code
+   - MySQL database (Primary-Replica)
+
+## Why Added
+- Load balancer: Distribute traffic, improve availability
+- Second server: Redundancy, handle more traffic
+- Primary-Replica DB: Read scalability, data backup
+
+## Load Balancer
+- Algorithm: Round Robin (rotates requests between servers)
+- Setup: Active-Active (both servers handle traffic)
+
+## Database Cluster
+- Primary: Handles write operations
+- Replica: Handles read operations, syncs from Primary
+- App: Writes to Primary, reads from Replica
+
+## Issues
+1. SPOF: Load balancer, database primary
+2. Security: No firewall, no HTTPS
+3. No monitoring
