@@ -1,0 +1,19 @@
+# 3-Server Web Infrastructure
+
+## Components
+1. Load Balancer: HAProxy (Round Robin)
+2. 2 Web Servers:
+   - Nginx + App Server + Code + MySQL Replica
+
+## Load Balancer
+- Algorithm: Round Robin (rotates requests)
+- Setup: Active-Active (both servers process traffic)
+
+## Database: Primary-Replica
+- Primary: Handles writes
+- Replica: Handles reads (syncs from Primary)
+
+## Issues
+1. SPOF: Load balancer, database primary
+2. Security: No firewall, no HTTPS
+3. No monitoring or alerts
