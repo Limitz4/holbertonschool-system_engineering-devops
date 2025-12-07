@@ -1,0 +1,25 @@
+# One Server Web Infrastructure
+
+## Components
+1. Domain: foobar.com with www A record pointing to 8.8.8.8
+2. Server (8.8.8.8):
+   - Web Server: Nginx
+   - Application Server
+   - Application Files
+   - Database: MySQL
+
+## Component Roles
+- Server: Computer providing services over network
+- Domain Name: Human-readable address mapped to IP via DNS
+- www record: A record pointing subdomain to IP
+- Web Server: Serves static content, reverse proxy
+- Application Server: Executes application code
+- Database: Stores/manages application data
+- Communication: HTTP/HTTPS over TCP/IP
+
+## Issues
+1. SPOF: Single server failure takes down everything
+2. Downtime: Maintenance requires server restart
+3. No scalability: Cannot handle high traffic
+4. Security: All components on same server
+5. Performance: Limited resources, bottlenecks
