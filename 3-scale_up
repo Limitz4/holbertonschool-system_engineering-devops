@@ -1,0 +1,14 @@
+# Scale Up Infrastructure
+
+## Added Components
+1. Additional server
+2. HAProxy cluster (2 load balancers)
+3. Component separation:
+   - Web server on dedicated server
+   - Application server on dedicated server  
+   - Database on dedicated server
+
+## Why Added
+- Extra server: More capacity, redundancy
+- HAProxy cluster: Load balancer redundancy, no SPOF
+- Component separation: Better resource allocation, independent scaling
