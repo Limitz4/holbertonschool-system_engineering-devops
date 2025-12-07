@@ -1,0 +1,13 @@
+# Scale Up Infrastructure
+
+## Added Components & Reasons
+1. Extra server: More capacity, redundancy
+2. HAProxy cluster: Load balancer redundancy, no SPOF
+3. Component separation:
+   - Dedicated web server: Better static content serving
+   - Dedicated app server: Better app processing
+   - Dedicated DB server: Better data management
+
+## Application vs Web Server
+- Web server: Serves static files (Nginx)
+- Application server: Runs app code, processes requests
